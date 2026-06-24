@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Computer Science PhD student at the UNL school of computing.
+I am a Computer Engineering PhD student at the University of Nebraska–Lincoln, working with Prof. Liang He in the Embedded Sensing and IoT group. My research focuses on energy harvesting and self-powered sensing systems for vehicular and mobile IoT applications.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
