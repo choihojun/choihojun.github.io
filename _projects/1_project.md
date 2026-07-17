@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 1
+title: Smart 
 description: with background image
 img: assets/img/12.jpg
 importance: 1
-category: during undergraduate studies
+category: Robotics
 related_publications: true
 ---
 
