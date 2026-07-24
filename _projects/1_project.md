@@ -4,7 +4,7 @@ title: Smart
 description: with background image
 img: assets/img/12.jpg
 importance: 1
-category: Robotics
+category: "Undergraduate Projects"
 related_publications: true
 ---
 
