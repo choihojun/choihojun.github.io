@@ -35,14 +35,10 @@ Role: Team Leader (in 5 member group)
     Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
 </div>
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-10 mt-3 mt-md-0">
-        <div class="ratio ratio-16x9 rounded z-depth-1 overflow-hidden">
-            <iframe src="https://www.youtube.com/embed/nvvU88x4Zqw"
-                    title="Smart Car demo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+<div class="row justify-content-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        <div class="rounded z-depth-1" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/nvvU88x4Zqw" title="Smart Car demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
         </div>
     </div>
 </div>
