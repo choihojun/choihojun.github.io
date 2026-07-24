@@ -38,7 +38,7 @@ Role: Team Leader (in 5 member group)
 <div class="row justify-content-sm-center">
     <div class="col-sm-10 mt-3 mt-md-0">
         <div class="ratio ratio-16x9 rounded z-depth-1 overflow-hidden">
-            <iframe src="https://www.youtube.com/watch?v=nvvU88x4Zqw"
+            <iframe src="https://www.youtube.com/embed/nvvU88x4Zqw"
                     title="Smart Car demo"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
