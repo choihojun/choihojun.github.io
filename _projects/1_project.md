@@ -5,7 +5,7 @@ description: Autonomous RC car with lane detection and infrared obstacle avoidan
 img: assets/img/robotics/auto_car_imgs/auto_car.png
 importance: 1
 category: "Undergraduate Projects"
-related_publications: true
+related_publications: false
 ---
 
 Participated 2018 Hanyang Smart Car Contest sponsored by Infineon and Mathworks.
