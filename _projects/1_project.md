@@ -1,18 +1,17 @@
 ---
 layout: page
 title: Smart Car
-description: with background image
+description: Autonomous RC car with lane detection and infrared obstacle avoidance
 img: assets/robotics/auto_car_imgs/auto_car.png
 importance: 1
 category: "Undergraduate Projects"
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Participated 2018 Hanyang Smart Car Contest sponsored by Infineon and Mathworks.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Role: Team Leader (in 5 member group)
+
 
     ---
     layout: page
