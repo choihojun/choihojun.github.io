@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: A collection of cool projects from undergraduate to PhD.
 nav: true
-nav_order: 3
-display_categories: [IoT, Battery, Robotics]
+nav_order: 2
+display_categories: [Research, Undergraduate Projects]
 horizontal: false
 ---
 
@@ -14,10 +14,13 @@ horizontal: false
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
+  {% assign categorized_projects = site.projects | where: "category", category %}
+  {% if categorized_projects.size > 0 %}
+  {% assign category_slug = category | slugify %}
+  <a id="{{ category_slug }}" href=".#{{ category_slug }}">
     <h2 class="category">{{ category }}</h2>
   </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
+
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
@@ -29,11 +32,12 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
   </div>
+  {% endif %}
   {% endif %}
   {% endfor %}
 
