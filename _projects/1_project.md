@@ -2,7 +2,7 @@
 layout: page
 title: Smart Car
 description: Autonomous RC car with lane detection and infrared obstacle avoidance
-img: assets/robotics/auto_car_imgs/auto_car.png
+img: assets/img/robotics/auto_car_imgs/auto_car.png
 importance: 1
 category: "Undergraduate Projects"
 related_publications: true
@@ -22,13 +22,13 @@ Role: Team Leader (in 5 member group)
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/robotics/auto_car_imgs/auto_car.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/auto_car_imgs/auto_car.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/robotics/auto_car_imgs/connect.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/auto_car_imgs/connect.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/robotics/auto_car_imgs/3d_print.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/auto_car_imgs/3d_print.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
