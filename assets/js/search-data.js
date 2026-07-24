@@ -418,7 +418,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-smart-car",
           title: 'Smart Car',
-          description: "with background image",
+          description: "Autonomous RC car with lane detection and infrared obstacle avoidance",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
