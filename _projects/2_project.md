@@ -1,81 +1,75 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Human Tracking Drone
+description: Vision-based person-following drone on a Parrot AR.Drone platform
+img: assets/img/robotics/drone_imgs/parrot_ar.png
 importance: 2
-category: during undergraduate studies
-giscus_comments: true
+category: "Undergraduate Projects"
+giscus_comments: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+A quadrotor that detects a person and autonomously follows them, built on a Parrot
+AR.Drone 2.0. The drone streams video to a host computer, which runs person detection
+and sends flight commands back over Wi-Fi to keep the target centered in frame at a
+set following distance.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**Role:** Team Leader (5 members) · **Duration:** [Jan–Jun 2019] · **Platform:** Parrot AR.Drone 2.0 · **Tools:** [Python, OpenCV, ROS]
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+As team leader I owned the tracking and control pipeline and coordinated computer
+vision, communication, and testing across the team.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/drone_imgs/drone.png" title="Parrot AR.Drone with ducted prop guards" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/drone_imgs/tracking.png" title="Person detection bounding box in the camera feed" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/drone_imgs/system.png" title="System diagram of the tracking pipeline" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Left: the Parrot AR.Drone platform. Middle: [person detection on the onboard camera
+    feed]. Right: [control loop from detection to flight command].
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
-<div class="row justify-content-sm-center">
+<div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <div class="rounded z-depth-1" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/OojMY1wX3Fo" title="Human tracking drone demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+        </div>
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    The drone detecting and following a walking person.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
+## Approach
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+**Perception.** The drone's forward camera feed was processed on a host computer using
+[a HOG/Haar person detector in OpenCV] to locate the target's bounding box each frame.
+[Describe how you handled the target when detection dropped for a frame or two.]
 
-{% endraw %}
+**Tracking control.** The horizontal offset of the bounding box from the image center
+drove a [PID] controller on yaw, keeping the person centered. The bounding box [height/area]
+was used as a distance proxy to hold a fixed following gap by commanding forward/back pitch.
+
+**Communication.** Detection and control ran off-board; commands were sent to the AR.Drone
+over its Wi-Fi link [via the ARDroneLib / ROS ardrone_autonomy driver], since the platform
+does not expose enough onboard compute for real-time vision.
+
+## Result
+
+[Describe what worked: e.g., the drone reliably followed a walking person indoors at
+~[X] m distance, recovering from brief occlusions. Add one concrete number — following
+distance, frame rate, or how long it held lock.]
+
+## Takeaways
+
+[This project was my first time closing a control loop around a perception system —
+the drone only flew as well as the detector was stable, which is where I first ran into
+the reliability problems of vision under changing light. Working with battery-constrained
+flight platforms later became my M.S. research focus.]
