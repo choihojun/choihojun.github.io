@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 3 with very long name
+title: Fish Drone
 description: a project that redirects to another website
-img: assets/img/7.jpg
+img: assets/img/robotics/drone_imgs/parrot_ar.png
 redirect: https://unsplash.com
 importance: 3
 category: during undergraduate studies

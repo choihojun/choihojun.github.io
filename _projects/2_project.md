@@ -63,6 +63,9 @@ does not expose enough onboard compute for real-time vision.
 
 ## Result
 
+Our team placed 1st rank from capstone contest in Robotics department.
+
+
 [Describe what worked: e.g., the drone reliably followed a walking person indoors at
 ~[X] m distance, recovering from brief occlusions. Add one concrete number — following
 distance, frame rate, or how long it held lock.]
