@@ -42,7 +42,7 @@ interpret the scene in real time and adjust its route accordingly. Our team earn
     </div>
 </div>
 <div class="caption">
-    The robot reading the tile mosaic and adjusting its path in real time.
+    The robot scanning the tile mosaic and spinning in place to signal a correct match with the target answer.
 </div>
 
 ## Approach
@@ -56,7 +56,7 @@ and the per-frame results were assembled — using [odometry / position along th
 the full grid of colored cells.
 
 **Recognition.** The reconstructed color grid was read as a dot-matrix pattern and classified
-into a letter or digit [via template matching against known character patterns].
+into a letter or digit via template matching against known character patterns.
 
 ## Result
 
@@ -64,12 +64,3 @@ Earned an **Encouragement Award** in the Vision Centric Challenge (College divis
 2016 WCRC Korean national qualifier
 ([results announcement](http://world-robofest.com/?act=board.index&bbs_code=notice&bbs_mode=view&bbs_seq=1107)).
 
-[Add one concrete detail if you have it: recognition accuracy, how reliably it completed the
-course, or run time.]
-
-## Takeaways
-
-Because the layout was never given ahead of time, the robot had to act on what it saw rather
-than on a pre-planned route — my first project where perception had to drive control in real
-time, under conditions I couldn't script in advance. That problem, making a system behave
-reliably on messy real-world input, is one I've kept working on since.
