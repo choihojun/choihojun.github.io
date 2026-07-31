@@ -431,13 +431,13 @@ ninja.data = [{
           description: "A Pioneer 3-DX robot that reads a floor mosaic through real-time vision",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
+            },},{id: "projects-rc-customized-car",
+          title: 'RC Customized Car',
           description: "another without an image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
+            },},{id: "projects-fish-drone",
+          title: 'Fish Drone',
           description: "a project with a background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
