@@ -72,10 +72,3 @@ wheel; its angle sets the car's steering direction.
 
 We also built the driving course the car ran on, and exhibited the whole system at the
 College of Engineering academic fair.
-
-## Takeaways
-
-It was first time I was obssessed about the project. Because 
-
-[Optional: 1–2 sentences on what you learned — e.g. first time integrating wireless comms,
-custom sensing (load cell), and 3D-printed mechanics into one working system.]
