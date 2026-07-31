@@ -4,7 +4,7 @@ title: RC Customized Car
 description: another without an image
 img:
 importance: 3
-category: during undergraduate studies
+category: "Undergraduate Projects"
 ---
 
 Every project has a beautiful feature showcase page.
