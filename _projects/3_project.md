@@ -7,16 +7,14 @@ importance: 3
 category: "Undergraduate Projects"
 ---
 
-A mobile robot that navigates a floor covered with randomly arranged colored tiles,
-recognizing the tiles and their pattern through real-time computer vision. Built on a
-Pioneer 3-DX platform driven by an onboard laptop, the system had to analyze what it saw
-and correct its path on the fly, since the tile spacing and layout were never announced
-in advance.
+A mobile robot that reads a character laid out on the competition floor and identifies it
+through computer vision. On a large white panel, pink and blue paper tiles were arranged in a grid to spell out a letter or digit, like a dot-matrix display. The robot drove alongside the panel in a single back-and-forth pass with a downward-facing camera, reconstructed the color grid from its scans, and reported which character the pattern formed. Built on a Pioneer 3-DX platform driven by an onboard laptop.
 
-**Role:** Team Leader (2 members) · **Duration:** May–Oct 2016 · **Platform:** Pioneer 3-DX + laptop · **Tools:** [C++/Python, OpenCV, ARIA]
+**Role:** Team member (2 members) · **Duration:** May–Oct 2016 · **Platform:** Pioneer 3-DX + laptop · **Tools:** C++/Python, OpenCV
 
-Developed for the **Vision Centric Challenge (VCC), College division** at the 2016 World
-Championship of Robot Contest (WCRC). The 2016 season mission, **"Mosaic,"** required the
+Developed for the **Vision Centric Challenge (VCC), College division** at the World
+Championship of Robot Contest (WCRC) — the Korean national qualifier, where top teams
+advance to the international final. The 2016 season mission, **"Mosaic,"** required the
 robot to distinguish colored paper tiles and their arrangement by vision alone. Because the
 gaps between tiles and the exact layout were not disclosed beforehand, the robot had to
 interpret the scene in real time and adjust its route accordingly. Our team earned an
@@ -24,19 +22,17 @@ interpret the scene in real time and adjust its route accordingly. Our team earn
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/pioneer3.png" title="Pioneer 3-DX robot with downward-facing camera" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/pioneer3.png" title="Pioneer 3-DX robot alongside the mosaic panel" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/pattern.png" title="Colored tile mosaic on the competition floor" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/recognition.png" title="Tile recognition result" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/mosaic_panel_reconstruction.png" title="Reconstructed tile grid forming a character" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Left: the Pioneer 3-DX platform. Middle: [the tile mosaic the robot reads]. Right:
-    [the recognized pattern output].
+    Left: the Pioneer 3-DX scanning alongside the panel. Right: the reconstructed tile grid
+    forming a character.
 </div>
+
 
 <div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -51,21 +47,23 @@ interpret the scene in real time and adjust its route accordingly. Our team earn
 
 ## Approach
 
-**Tile recognition.** A [downward-facing] camera captured the floor, and [OpenCV] was used to
-segment the colored tiles and classify each by color. [Describe how you handled lighting
-variation or color thresholding on the venue floor.]
+**Scanning.** The robot drove parallel to the panel in a single back-and-forth pass, capturing
+the floor with a downward-facing camera. Each frame covered only part of the panel, so full
+coverage came from the robot's motion rather than one wide shot.
 
-**Pattern interpretation.** From the segmented tiles the system reconstructed the local
-mosaic layout, [describe how you inferred the arrangement / which pattern it matched].
+**Grid reconstruction.** [OpenCV] segmented each frame into pink, blue, and background by color,
+and the per-frame results were assembled — using [odometry / position along the panel] — into
+the full grid of colored cells.
 
-**Real-time path correction.** Because the tile spacing and layout were unknown in advance,
-the robot could not follow a fixed route. It updated its heading from the current camera
-frame, [describe the control — e.g., steering toward the next target tile / re-centering on
-the pattern], driving the Pioneer 3-DX from the laptop [via the ARIA library].
+**Recognition.** The reconstructed color grid was read as a dot-matrix pattern and classified
+into a letter or digit [via template matching against known character patterns].
 
 ## Result
 
-Earned an **Encouragement Award** at the 2016 WCRC Vision Centric Challenge (College division).
+Earned an **Encouragement Award** in the Vision Centric Challenge (College division) at the
+2016 WCRC Korean national qualifier
+([results announcement](http://world-robofest.com/?act=board.index&bbs_code=notice&bbs_mode=view&bbs_seq=1107)).
+
 [Add one concrete detail if you have it: recognition accuracy, how reliably it completed the
 course, or run time.]
 
