@@ -426,9 +426,9 @@ ninja.data = [{
           description: "Vision-based person-following drone on a Parrot AR.Drone platform",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-fish-drone",
-          title: 'Fish Drone',
-          description: "a project that redirects to another website",
+            },},{id: "projects-pattern-reading-mobile-robot",
+          title: 'Pattern-Reading Mobile Robot',
+          description: "A Pioneer 3-DX robot that reads a floor mosaic through real-time vision",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
