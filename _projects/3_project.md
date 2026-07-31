@@ -1,81 +1,77 @@
 ---
 layout: page
-title: Fish Drone
-description: a project that redirects to another website
-img: assets/img/robotics/drone_imgs/parrot_ar.png
-redirect: https://unsplash.com
+title: Pattern-Reading Mobile Robot
+description: A Pioneer 3-DX robot that reads a floor mosaic through real-time vision
+img: assets/img/robotics/mobile_robot/pioneer3.png
 importance: 3
-category: during undergraduate studies
+category: "Undergraduate Projects"
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+A mobile robot that navigates a floor covered with randomly arranged colored tiles,
+recognizing the tiles and their pattern through real-time computer vision. Built on a
+Pioneer 3-DX platform driven by an onboard laptop, the system had to analyze what it saw
+and correct its path on the fly, since the tile spacing and layout were never announced
+in advance.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**Role:** Team Leader (2 members) · **Duration:** May–Oct 2016 · **Platform:** Pioneer 3-DX + laptop · **Tools:** [C++/Python, OpenCV, ARIA]
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Developed for the **Vision Centric Challenge (VCC), College division** at the 2016 World
+Championship of Robot Contest (WCRC). The 2016 season mission, **"Mosaic,"** required the
+robot to distinguish colored paper tiles and their arrangement by vision alone. Because the
+gaps between tiles and the exact layout were not disclosed beforehand, the robot had to
+interpret the scene in real time and adjust its route accordingly. Our team earned an
+**Encouragement Award**.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/pioneer3.png" title="Pioneer 3-DX robot with downward-facing camera" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/pattern.png" title="Colored tile mosaic on the competition floor" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/robotics/mobile_robot/recognition.png" title="Tile recognition result" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Left: the Pioneer 3-DX platform. Middle: [the tile mosaic the robot reads]. Right:
+    [the recognized pattern output].
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
+<div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <div class="rounded z-depth-1" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/7r35HwBlk-A" title="Pattern-reading mobile robot demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+        </div>
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    The robot reading the tile mosaic and adjusting its path in real time.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Approach
 
-{% raw %}
+**Tile recognition.** A [downward-facing] camera captured the floor, and [OpenCV] was used to
+segment the colored tiles and classify each by color. [Describe how you handled lighting
+variation or color thresholding on the venue floor.]
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+**Pattern interpretation.** From the segmented tiles the system reconstructed the local
+mosaic layout, [describe how you inferred the arrangement / which pattern it matched].
 
-{% endraw %}
+**Real-time path correction.** Because the tile spacing and layout were unknown in advance,
+the robot could not follow a fixed route. It updated its heading from the current camera
+frame, [describe the control — e.g., steering toward the next target tile / re-centering on
+the pattern], driving the Pioneer 3-DX from the laptop [via the ARIA library].
+
+## Result
+
+Earned an **Encouragement Award** at the 2016 WCRC Vision Centric Challenge (College division).
+[Add one concrete detail if you have it: recognition accuracy, how reliably it completed the
+course, or run time.]
+
+## Takeaways
+
+Because the layout was never given ahead of time, the robot had to act on what it saw rather
+than on a pre-planned route — my first project where perception had to drive control in real
+time, under conditions I couldn't script in advance. That problem, making a system behave
+reliably on messy real-world input, is one I've kept working on since.
