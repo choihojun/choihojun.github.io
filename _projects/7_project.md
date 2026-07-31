@@ -75,5 +75,7 @@ College of Engineering academic fair.
 
 ## Takeaways
 
+It was first time I was obssessed about the project. Because 
+
 [Optional: 1–2 sentences on what you learned — e.g. first time integrating wireless comms,
 custom sensing (load cell), and 3D-printed mechanics into one working system.]
