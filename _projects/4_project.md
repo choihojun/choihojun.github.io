@@ -24,24 +24,25 @@ for live PID tuning.
     with buttons for on-the-fly PID tuning.
 </div>
 
+
 ## Demo
 
 <div class="row">
-    <div class="col-sm-5 mt-3 mt-md-0">
-        <div class="rounded z-depth-1" style="position:relative;padding-bottom:177.78%;height:0;overflow:hidden;">
-            <iframe src="https://www.youtube.com/embed/e5ISMuw_W54" title="Line tracer practice run" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+    <div class="col-sm mt-3 mt-md-0">
+        <div class="rounded z-depth-1" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/X-XB1hN8KlE" title="Line tracer practice run" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
         </div>
     </div>
-    <div class="col-sm-7 mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0">
         <div class="rounded z-depth-1" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
             <iframe src="https://www.youtube.com/embed/yByiRi2yWzk?start=2108" title="Line tracer competition run" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
-    </div>
+        </div>
     </div>
 </div>
 <div class="caption">
-    Left: a practice run before the competition. Right: the competition run
-    (<a href="https://www.youtube.com/watch?v=yByiRi2yWzk&t=2108s" target="_blank" rel="noopener">my run is at 35:08–37:45</a>).
+Left: a practice run before the competition. Right: the competition run (<a href="https://www.youtube.com/watch?v=yByiRi2yWzk&t=2108s" target="_blank" rel="noopener">my run is at 35:08–37:45</a>).
 </div>
+
 
 ## Hardware
 
