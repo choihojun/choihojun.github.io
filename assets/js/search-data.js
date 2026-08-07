@@ -431,9 +431,9 @@ ninja.data = [{
           description: "A Pioneer 3-DX robot that reads a floor mosaic through real-time vision",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-rc-customized-car",
-          title: 'RC Customized Car',
-          description: "another without an image",
+            },},{id: "projects-line-tracer",
+          title: 'Line Tracer',
+          description: "A PID line-following robot built on ATmega128 for a national competition",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-fish-drone",
