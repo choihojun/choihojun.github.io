@@ -50,17 +50,17 @@ managed the project overall: documentation, and ordering the parts we needed thr
 **Body.** The fish body was designed in Tinkercad and shaped to be streamlined, so it could
 move through water with a natural, fish-like motion rather than being pushed by a propeller.
 
-**Actuation.** The body was articulated by servos arranged in a line from head to tail —
-head-to-body, body-to-body, and body-to-fin joints — each driven by an Arduino. Every joint
-has its own center angle and range of motion, so the body can bend along its length rather
-than at a single hinge.
+**Actuation.** Four HS-5625MG servos drive the body from an Arduino. One servo at the head
+steers the fish, and three more run down the body — head-to-body, body-to-body, and
+body-to-fin joints — so the tail section can bend along its length rather than at a single hinge.
 
-**Swimming algorithm.** Each joint sweeps back and forth through a triangular waveform, but
-the joints are offset from each other by a fixed phase. That phase offset makes the bend
-travel down the body as a wave from head to tail — a traveling wave — which is what propels
-the fish forward instead of just flexing in place. The robot receives a heading angle and a
-magnitude value over a Zigbee link; the magnitude sets the swimming speed, and the controller
-ramps speed up gradually rather than jumping to the target so the motion stays smooth.
+**Swimming algorithm.** The three body joints each sweep back and forth through a triangular
+waveform, offset from one another by a fixed phase. That phase offset makes the bend travel
+down the body as a wave from front to tail — a traveling wave — which is what propels the fish
+forward instead of just flexing in place. The head servo steers separately. The robot receives
+a heading angle and a magnitude value over a Zigbee link; the magnitude sets swimming speed,
+and the controller ramps speed up gradually rather than jumping to the target so the motion
+stays smooth.
 
 ## Result
 
@@ -69,5 +69,4 @@ Won the **Grand Prize** at the 2017 College of Engineering academic fair, with a
 
 ## Takeaways
 
-[Optional: 1–2 sentences — e.g. leading a six-person team through mechanical design, control
-software, and integration at once, and seeing a bio-inspired design idea actually swim.]
+Leading a six-person team meant owning the whole pipeline at once — mechanical design, control software, and integration — not just my own part. Turning a bio-inspired idea into something that actually swam is what made embedded systems click for me.
