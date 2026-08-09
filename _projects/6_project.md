@@ -3,7 +3,7 @@ layout: page
 title: Line Tracer
 description: a project with no image
 img:
-importance: 4
+importance: 6
 category: "Undergraduate Projects"
 ---
 

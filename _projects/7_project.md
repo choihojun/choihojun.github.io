@@ -3,7 +3,7 @@ layout: page
 title: Custom RC Car
 description: A store-bought RC car rebuilt with Arduino, Zigbee, and a load-cell throttle
 img: assets/img/robotics/custom_RC_car/entire_car.jpg
-importance: 1
+importance: 7
 category: "Undergraduate Projects"
 ---
 

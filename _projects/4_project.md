@@ -3,7 +3,7 @@ layout: page
 title: Line Tracer
 description: A PID line-following robot built on ATmega128 for a national competition
 img: assets/img/robotics/line_tracer/line_tracer.png
-importance: 3
+importance: 4
 category: "Undergraduate Projects"
 ---
 
