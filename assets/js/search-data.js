@@ -438,7 +438,7 @@ ninja.data = [{
               window.location.href = "/projects/4_project/";
             },},{id: "projects-fish-drone",
           title: 'Fish Drone',
-          description: "a project with a background image",
+          description: "A swimming fish-shaped robot with a streamlined servo-driven body",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-line-tracer",
